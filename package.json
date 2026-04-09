@@ -1,0 +1,17 @@
+{
+  "name": "home-postal-system",
+  "version": "1.0.0",
+  "description": "Home Postal System — Station-Only Mode",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler pages dev public --d1 DB",
+    "deploy": "wrangler pages deploy public",
+    "db:migrate:local": "wrangler d1 migrations apply home-postal-system",
+    "db:migrate:remote": "wrangler d1 migrations apply home-postal-system --remote",
+    "db:seed": "wrangler d1 execute home-postal-system --file=./migrations/0001_init.sql",
+    "db:seed:remote": "wrangler d1 execute home-postal-system --remote --file=./migrations/0001_init.sql"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}
